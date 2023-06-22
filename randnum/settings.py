@@ -69,8 +69,8 @@ TEMPLATES = [
     },
 ]
 
-ASGI_APPLICATION = 'randnum.asgi.application'
 WSGI_APPLICATION = 'randnum.wsgi.application'
+ASGI_APPLICATION = 'randnum.asgi.application'
 
 
 # Database

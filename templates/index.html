@@ -10,7 +10,7 @@
     <h1 style=" color:white; "> This will generate random numbers between 0 to 1000 </h1>
     <div style="text-align: center;">
         <h1><input type="button" value="start" onclick="start()"></h1>
-        <h2 id="msg"></h2>
+        <h2 style=" color:white; " id="msg"></h2>
     </div>
 
     <script>
@@ -19,7 +19,7 @@
             socket.onmessage = function (event) {
                 var data = JSON.parse(event.data);
                 console.log(data);
-                document.getElementById("msg").innerText = data.message;
+                document.getElementById("msg").innerHTML=data.message
             }
         }
 
