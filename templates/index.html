@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rndom number</title>
+</head>
+
+<body bgcolor="black">
+    <h1 style=" color:white; "> This will generate random numbers between 0 to 1000 </h1>
+    <div style="text-align: center;">
+        <h1><input type="button" value="start" onclick="start()"></h1>
+        <h2 id="msg"></h2>
+    </div>
+
+    <script>
+        function start() {
+            var socket = new WebSocket('ws://localhost:8000/ws/start/');
+            socket.onmessage = function (event) {
+                var data = JSON.parse(event.data);
+                console.log(data);
+                document.getElementById("msg").innerText = data.message;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
